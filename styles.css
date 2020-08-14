@@ -1,0 +1,106 @@
+body {
+	font: 400 14px/24px "Helvetica Neue",Helvetica, Arial, Sans-Serif;
+}
+html { font-size:100%; }
+ h1 {
+	color: #000;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 6px;
+	text-align: center;
+}
+ .container:before, .container:after {
+	content: "";
+	display: table;
+}
+ .container:after {
+	clear: both;
+}
+ .container {
+	background: #eaeaed;
+	margin-bottom: 24px;
+	*zoom: 1;
+ }
+ .container-50 {
+	margin-bottom: 0;
+	width: 50%;
+ }
+ .container, section, aside {
+	border-radius: 6px;
+	display: flex;
+ }
+ section, aside {
+	background: transparent;
+	color: #fff;
+	margin: 1.858736059%;
+	padding: 20px 0;
+	text-align: center;
+ }
+section {
+	display: flex;
+	flex-direction: column;
+ }
+ aside {
+	display: flex;
+	flex-direction: column;
+}
+.btn {
+	background:#72C3DC;
+	color: #fff;
+	border:0;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	width: auto;
+	padding: 8px 15px;
+	cursor: pointer;
+}
+.number-row{
+	display: flex;
+}
+.number{
+	color:#FFF;
+	font-size: 2.5rem;
+	text-align: center;
+	padding: 10%;
+    flex-basis: 30%;
+}
+.number-1,.number-8{
+	background:#6F98A8;
+}
+.number-2,.number-4{
+	background:#2B8EAD;
+}
+.number-3,.number-5,.number-9{
+	background:#2F454E;
+}
+.number-6,.number-7{
+	background:	#BFBFBF;
+}
+@media(min-width: 320px)  { body {font-size:1rem;} }
+@media (min-width:960px)  { 
+	body {font-size:1.2rem;}  
+	.container-75 {
+		width: 75%;
+		margin: 0 auto;
+	}
+	section{width: 80%;}
+	.m-visible {display: none;}
+	aside{width: 20%;}
+ } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+@media(max-width: 640px) { 
+	body {font-size:1rem;} 
+	.number-row {
+		flex-direction: column;
+	}
+	.number{background:#EFEFEF;color:#000;margin-bottom: 1.858736059%;padding: 2%;font-size:120%;}
+   	.number-1,.number-8 {border-left: 5px solid #6F98A8;}
+	.number-2,.number-4 {border-left: 5px solid #2B8EAD;}
+	.number-3,.number-5,.number-9 {border-left: 5px solid #2F454E;}
+	.number-6,.number-7 {border-left: 5px solid #BFBFBF;}
+	.m-visible {display: flex;flex-direction: row;padding: 0;justify-content: center;margin-bottom: 0;}
+	aside{display:  none;}
+	.container {flex-direction: column;}
+	section{padding-top: 0;}
+	.btn {margin-bottom :0; margin-right: 10px;}
+} 

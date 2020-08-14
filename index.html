@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Suffle and Sort</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<h1>Suffle and sort</h1>
+      
+	<div class="container container-75">
+		<aside class="m-visible">
+			<button class="btn">Suffle</button>
+			<button class="btn">Sort</button>
+		</aside>
+        <section id="demo">
+			<div class="number-row">
+				<div class ="number number-1">1</div>
+				<div class ="number number-2">2</div>
+				<div class ="number number-3">3</div>
+			</div>	
+			<div class="number-row">
+				<div class ="number number-4">4</div>
+				<div class ="number number-5">5</div>
+				<div class ="number number-6">6</div>
+			</div>
+			<div class="number-row">
+				<div class ="number number-7">7</div>
+				<div class ="number number-8">8</div>
+				<div class ="number number-9">9</div>
+			 </div>
+		</section>	 
+        <aside>
+			<button class="btn" onclick="shuffleBox()">Suffle</button>
+			<button class="btn" onclick="sortBox()">Sort</button>
+		</aside>
+	</div>
+	
+	<script>
+		
+		function sortBox() {
+			var arr = [];
+			for(var i=1;i<10;i++){
+				var cl = 'number number-'+i;
+				var x = document.getElementsByClassName(cl);
+				//alert(x[x.length-1].innerHTML);
+				arr.push(x[x.length-1].innerHTML);
+				
+			}
+			var b = arr.sort();		
+			for(var j=0;j<b.length;j++){
+				var cj = 'number number-'+(j+1);
+				var y = document.getElementsByClassName(cj);
+				y[0].innerHTML = b[j];
+			}
+		}
+		
+		function shuffleBox() {
+			var arr = [];
+			for(var i=1;i<10;i++){
+				var cl = 'number number-'+i;
+				var x = document.getElementsByClassName(cl);
+				//alert(x[x.length-1].innerHTML);
+				arr.push(x[x.length-1].innerHTML);
+				
+			}
+			var b = shuffle(arr);
+			
+			for(var j=0;j<b.length;j++){
+				var cj = 'number number-'+(j+1);
+				var y = document.getElementsByClassName(cj);
+				y[0].innerHTML = b[j];
+			}
+		}
+		function shuffle(arra1) {
+			var ctr = arra1.length;
+			var temp, index = 0;
+
+			while (ctr > 0) {
+
+				index = Math.floor(Math.random() * ctr);
+
+				ctr--;
+
+				temp = arra1[ctr];
+				arra1[ctr] = arra1[index];
+				arra1[index] = temp;
+			}
+			
+			return arra1;
+			
+		}
+	</script>
+</body>
+</html>
